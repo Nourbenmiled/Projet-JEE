@@ -26,6 +26,9 @@
                        <li class="nav-item">
                          <a class="nav-link" href="/teachers">Enseignants</a>
                        </li>
+                       <li class="nav-item">
+                           <a class="nav-link" href="/note">Notes</a>
+                       </li>
                          <li class="nav-item">
                             <a class="nav-link" href="/validation">Validation</a>
                          </li>

@@ -26,6 +26,9 @@
                        <li class="nav-item">
                          <a class="nav-link" href="/teachers">Enseignants</a>
                        </li>
+                       <li class="nav-item">
+                           <a class="nav-link" href="/note">Notes</a>
+                       </li>
                          <li class="nav-item">
                             <a class="nav-link" href="/validation">Validation</a>
                          </li>
@@ -46,9 +49,9 @@
                             <th>Course Name</th>
                             <th>Description</th>
                             <th>Coefficient</th>
-                            <th>Affectation</th>
+                            <th>Action</th>
 
-                            <th>Actions</th>
+                            <th>Affectation</th>
                         </tr>
                     </thead>
                     <tbody>
