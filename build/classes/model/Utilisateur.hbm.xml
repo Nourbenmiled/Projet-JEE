@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated 6 nov. 2024, 13:56:39 by Hibernate Tools 5.5.9.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class catalog="jeeprojet" name="model.Utilisateur" optimistic-lock="none" table="utilisateur">
+        <id name="idUser" type="java.lang.Integer">
+            <column name="id_user"/>
+            <generator class="identity"/>
+        </id>
+        <property name="username" type="string">
+            <column length="33" name="username" not-null="true"/>
+        </property>
+        <property name="password" type="string">
+            <column length="33" name="password" not-null="true"/>
+        </property>
+        <property name="role" type="int">
+            <column name="role" not-null="true"/>
+        </property>
+        <property name="validation" type="int">
+            <column name="validation" not-null="true"/>
+        </property>
+        <one-to-one class="model.Admin" name="admin"/>
+        <one-to-one class="model.Etudiant" name="etudiant"/>
+        <one-to-one class="model.Enseignant" name="enseignant"/>
+    </class>
+</hibernate-mapping>

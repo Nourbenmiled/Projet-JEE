@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated 6 nov. 2024, 13:56:39 by Hibernate Tools 5.5.9.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class catalog="jeeprojet" name="model.Etudiant" optimistic-lock="none" table="etudiant">
+        <id name="idEtu" type="java.lang.Integer">
+            <column name="id_etu"/>
+             <generator class="foreign">
+                <param name="property">utilisateur</param>
+            </generator>                
+            
+           
+        </id>
+        <one-to-one class="model.Utilisateur" constrained="true" name="utilisateur"/>
+        <property name="nom" type="string">
+            <column length="33" name="nom" not-null="true"/>
+        </property>
+        <property name="prenom" type="string">
+            <column length="33" name="prenom" not-null="true"/>
+        </property>
+        <property name="dateNaissance" type="date">
+            <column length="10" name="dateNaissance" not-null="true"/>
+        </property>
+        <property name="contact" type="string">
+            <column length="33" name="contact" not-null="true"/>
+        </property>
+        <property name="moyenne" type="float">
+            <column name="moyenne" not-null="true" precision="12" scale="0"/>
+        </property>
+        <set fetch="select" inverse="true" lazy="true" name="inscriptions" table="inscription">
+            <key>
+                <column name="id_etu" not-null="true"/>
+            </key>
+            <one-to-many class="model.Inscription"/>
+        </set>
+        <set fetch="select" inverse="true" lazy="true" name="resultats" table="resultat">
+            <key>
+                <column name="id_etu" not-null="true"/>
+            </key>
+            <one-to-many class="model.Resultat"/>
+        </set>
+    </class>
+</hibernate-mapping>

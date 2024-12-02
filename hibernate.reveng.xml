@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-reverse-engineering PUBLIC "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" "http://hibernate.org/dtd/hibernate-reverse-engineering-3.0.dtd" >
+
+<hibernate-reverse-engineering>
+  <table-filter match-schema="jeeprojet" match-name=".*"/>
+  <table-filter match-catalog="jeeprojet" match-name="admin"/>
+  <table-filter match-catalog="jeeprojet" match-name="cours"/>
+  <table-filter match-catalog="jeeprojet" match-name="enseignant"/>
+  <table-filter match-catalog="jeeprojet" match-name="etudiant"/>
+  <table-filter match-catalog="jeeprojet" match-name="inscription"/>
+  <table-filter match-catalog="jeeprojet" match-name="inscription_enseignant"/>
+  <table-filter match-catalog="jeeprojet" match-name="resultat"/>
+  <table-filter match-catalog="jeeprojet" match-name="utilisateur"/>
+</hibernate-reverse-engineering>

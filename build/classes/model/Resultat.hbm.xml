@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated 6 nov. 2024, 13:56:39 by Hibernate Tools 5.5.9.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class catalog="jeeprojet" name="model.Resultat" optimistic-lock="none" table="resultat">
+        <id name="idRes" type="java.lang.Integer">
+            <column name="id_res"/>
+            <generator class="identity"/>
+        </id>
+        <many-to-one class="model.Cours" fetch="select" name="cours">
+            <column name="id_cours" not-null="true"/>
+        </many-to-one>
+        <many-to-one class="model.Etudiant" fetch="select" name="etudiant">
+            <column name="id_etu" not-null="true"/>
+        </many-to-one>
+        <property name="note" type="float">
+            <column name="note" not-null="true" precision="12" scale="0"/>
+        </property>
+    </class>
+</hibernate-mapping>
