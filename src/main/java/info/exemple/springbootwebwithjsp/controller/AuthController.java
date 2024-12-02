@@ -35,8 +35,12 @@ public class AuthController {
     @PostMapping("/login")
     public String loginUser(@RequestParam String username, @RequestParam String password, Model model) {
         User user = userService.authenticate(username, password);
-        if (user != null) {
-            return "redirect:/cours"; // Rediriger vers la page d'accueil après connexion réussie
+        if (user.getRole().equals("teacher")&&user.getValidation()) {
+            return "redirect:/coursteacher";
+        }else if (user.getRole().equals("admin")){
+            return "redirect:/cours";
+        }else if (user.getRole().equals("student")&&user.getValidation()) {
+            return "redirect:/coursStudent";
         } else {
             model.addAttribute("error", "Invalid username or password");
             return "login";

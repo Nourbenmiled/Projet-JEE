@@ -19,19 +19,19 @@ public class UserController {
         this.userService = userService;
     }
 
-    @GetMapping("/students")
+    @GetMapping("/create")
     public String listStudents(Model model) {
         model.addAttribute("students", userService.findAllStudents());
 
         return "users/student";
     }
 
-    @GetMapping("/teachers")
-    public String listTeachers(Model model) {
-        model.addAttribute("teachers", userService.findAllTeacher());
+//    @GetMapping("/teachers")
+//    public String listTeachers(Model model) {
+  //      model.addAttribute("teachers", userService.findAllTeacher());
 
-        return "users/teacher";
-    }
+    //    return "users/teacher";
+    //}
 
     @PostMapping("/teachers/delete")
     public String deleteTeachers(@RequestParam("id") Long id) {
